@@ -73,6 +73,10 @@ public class WebConfig extends WebSecurityConfigurerAdapter {
 		.logout()
         .permitAll()
 		.logoutRequestMatcher(new AntPathRequestMatcher("/logout", "POST"))
+//				.clearAuthentication(true)
+//				.logoutSuccessUrl("/account/login")
+//				.deleteCookies("JSESSIONID")
+//				.invalidateHttpSession(true)
         .and()
 		// enabling the basic authentication
 		.httpBasic().and()

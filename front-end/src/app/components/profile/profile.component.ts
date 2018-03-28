@@ -20,15 +20,23 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
   }
 
+  
+  clearLocal() {
+	    localStorage.removeItem('currentUser');
+		this.router.navigate(['/login']);
+  }
+  
 // login out from the app
   logOut() {
     this.authService.logOut()
       .subscribe(
         data => {
+			console.log("succes" + data);
           this.router.navigate(['/login']);
+		  
         },
         error => {
-
+			console.log(error);
         });
   }
 }
